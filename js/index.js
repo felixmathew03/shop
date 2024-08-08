@@ -4,11 +4,11 @@ async function fetchProducts(){
         const products=await res.json();
         str=``
         products.products.map((product)=>{
-            str+=`<div class="card">
+            str+=`<div class="card" >
             <img src="${product.thumbnail}" alt="">
             <h3>${product.title.substring(0,15)}</h3>
-            <p>${product.price}</p>
-            <button>More details</button>
+            <p>$${product.price}</p>
+            <a href="./html/product.html"><button >More details</button></a>
         </div>`
         })
         document.getElementById("products").innerHTML=str;
@@ -19,7 +19,7 @@ async function fetchProducts(){
 }
 fetchProducts();
 
-document.getElementById("search").addEventListener('keyup',async(e)=>{
+document.getElementById("sear").addEventListener('keyup',async(e)=>{
     try {
         const res=await fetch('https://dummyjson.com/products');
         const products=await res.json();
@@ -28,8 +28,8 @@ document.getElementById("search").addEventListener('keyup',async(e)=>{
             str+=`<div class="card">
             <img src="${product.thumbnail}" alt="">
             <h3>${product.title.substring(0,15)}</h3>
-            <p>${product.price}</p>
-            <button>More details</button>
+            <p>$${product.price}</p>
+            <a href="./html/product.html"><button >More details</button></a>
         </div>`
         })
 

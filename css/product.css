@@ -1,0 +1,89 @@
+
+.log{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right: 5%;
+    align-items: center;
+}
+.log button{
+    width: 100px;
+    height: 60%;
+    margin: 2%;
+    color: white;
+    font-size:medium;
+    border-radius: 5px;
+    border: 1px solid rgb(41, 40, 40);
+    background-color: green;
+}
+
+.pdetails{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.pdleft{
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.pdleft img{
+    height: 28rem;
+    width: 28rem;
+}
+.pdleft button{
+    width: 45%;
+    height: 10%;
+    margin: 2%;
+    color: white;
+    font-size:medium;
+    border-radius: 5px;
+    border: 1px solid rgb(41, 40, 40);
+    background-color: rgb(41, 40, 40);
+}
+.pdleft  #bt1 {
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+}
+.pdleft  #bt2 {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+}
+.pdright{
+    width:60%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.price{
+    font-size: large;
+    display: flex;
+}
+.price h3{
+    margin-right: 1%;
+}
+.price h4{
+    color: gray;
+}
+.avail{
+    color: red;
+    font-weight: bold;
+}
+.r{
+    background-color: black;
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    margin-right: 1%;
+}
+.rev{
+    display: flex;
+    justify-content: center;
+    
+}
