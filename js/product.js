@@ -1,47 +1,33 @@
-async function fetchProducts(){
-    try {
-        const res=await fetch('https://dummyjson.com/products')
-        const products=await res.json();
-        str=``
-        
-            str+=`<div class="pdleft">
-            <img src="${products.products[0].thumbnail}" alt="">
-            <div class="butt">
-                <button id="bt1">Add To Cart</button> <button id="bt2">Buy Now</button>
-            </div>
-            
-        </div>
-        <div class="pdright">
-            <h2>${products.products[0].title}</h2>
-            <p>${products.products[0].description}</p>
-            <h3>Category:${products.products[0].category}</h3>
-            <div class="price"><h3>$${products.products[0].price}</h3> <h4><strike>${products.products[0].discountPercentage}</strike>%off</h4></div>
-            
-            <p><span class="r">Rating: ${products.products[0].rating}</span><br><br>Stock: ${products.products[0].stock}<br><br> Availibility: <span class="avail">${products.products[0].availabilityStatus}</span></p>
-            <p><b>Brand: </b>${products.products[0].brand}</p>
-            <p><b>sku: </b>${products.products[0].sku}</p>
-            <p><b>Warranty Information: </b>${products.products[0].warrantyInformation}</p>
-            <p><b>Shipping Information: </b>${products.products[0].shippingInformation}</p>
-            <h3 align="center"><u>Reviews</u></h3>
-            <div class="rev">
-                <div class="review">
-                    <p><b>Name:</b>${products.products[0].reviews[0].reviewerName}</p>
-                    <p><b>Email:</b>${products.products[0].reviews[0].reviewerEmail}</p>
-                    <p> <b>Date:</b>${products.products[0].reviews[0].date}</p>
-                    <p><b>Comment:</b>${products.products[0].reviews[0].comment}</p>
-                </div>
-            </div>
-
-            <p><b>Return Policy:</b>${products.products[0].returnPolicy}</p>
-            <p><b>Minimum Order Quantity</b>${products.products[0].minimumOrderQuantity}</p>
-
-            <img src="${products.products[0].meta.qrCode}" alt="">
-            </div>`
-        
-        document.getElementById("pdetails").innerHTML=str;
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-fetchProducts();
+async function fetchProduct(){
+    const urlParams=new URLSearchParams(window.location.search)
+    id=urlParams.get("id");
+    console.log(id);
+    const res=await fetch(`https://dummyjson.com/products/${id}`)
+    const product=await res.json();
+    document.getElementById("img").src=`${product.thumbnail}`;
+    document.getElementById("h2a").innerHTML=`${product.title}`
+    document.getElementById("pa").innerHTML=`${product.description}`
+    document.getElementById("h3a").innerHTML=`Category: ${product.category}`
+    document.getElementById("price").innerHTML=`<h3 >$${product.price}</h3> <h4 ><strike>${product.discountPercentage}</strike>%off</h4>`
+    document.getElementById("pb").innerHTML=`<span class="r">Rating: ${product.rating}</span><br><br>Stock: ${product.stock}<br><br> Availibility: <span class="avail">${product.availabilityStatus}</span>`
+    document.getElementById("det").innerHTML=`
+                                        <p><b>Brand: </b>${product.brand}</p>
+                                        <p><b>sku: </b>${product.sku}</p>
+                                        <p><b>Warranty Information: </b>${product.warrantyInformation}</p>
+                                        <p><b>Shipping Information: </b>${product.shippingInformation}</p>`
+    str=``
+    product.reviews.map((i)=>{
+        str+=`<div class="review">
+                    <p><b>Name:</b>${i.reviewerName}</p>
+                    <p><b>Email:</b>${i.reviewerEmail}</p>
+                    <p> <b>Date:</b>${i.date.substring(0,10)}</p>
+                    <p><b>Comment:</b>${i.comment}</p>
+                </div>`
+    })
+    document.getElementById("rev").innerHTML=str;
+    document.getElementById("pc").innerHTML=`<p > <b>Return Policy:</b>${product.returnPolicy}</p>
+    <p><b>Minimum Order Quantity</b>${product.minimumOrderQuantity}</p>`;
+    document.getElementById("img2").src=`${product.meta.qrCode}`
+    document.getElementById
+} 
+fetchProduct();
