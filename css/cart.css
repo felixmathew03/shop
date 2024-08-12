@@ -1,20 +1,23 @@
 .cart{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 10px;
+    width: 28%;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .cart img{
-    width: 7rem;
-    height: 7rem;
+    object-fit: cover;
 }
-.btn button{
+ button{
     background-color: red;
     color: white;
     font-weight: bold;
     border: 1px solid red;
     border-radius: 5px;
     padding: 12px 22px;
+    margin-top: 15px;
 }
 #count{
     background-color: white;

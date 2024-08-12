@@ -16,13 +16,45 @@ async function fetchProduct(){
     cost=product.price-(product.price*product.discountPercentage/100);
     c=cost.toString();
     
-    document.getElementById("price").innerHTML=`<h2 class="p1">$${c.substring(0,5)}</h2> <h3 class="p2"><strike>$${product.price}</strike></h3>`
-    document.getElementById("pb").innerHTML=`Stock: ${product.stock}<br><br> Availibility: <span class="avail">${product.availabilityStatus}</span>`
+    document.getElementById("price").innerHTML=`<h2 class="p1">$${c.substring(0,5)}</h2> <h3 class="p2"><strike>$${product.price}</strike></h3>  <h5> ${product.discountPercentage}%off</h5>`
     document.getElementById("det").innerHTML=`
-                                        <p><b>Brand: </b>${product.brand}</p>
-                                        <p><b>sku: </b>${product.sku}</p>
-                                        <p><b>Warranty Information: </b>${product.warrantyInformation}</p>
-                                        <p><b>Shipping Information: </b>${product.shippingInformation}</p>`
+                <h2 class="spec">Specification</h2>
+                <div class="table">
+                <table>
+                    <tr>
+                        <td><b>Brand</b></td>
+                        <td>: ${product.brand}</td>
+                    </tr>
+                    <tr>
+                        <td><b>sku</b></td>
+                        <td>: ${product.sku}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Warranty Information</b></td>
+                        <td>: ${product.warrantyInformation}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Shipping Information</b></td>
+                        <td>: ${product.shippingInformation}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Stock</b></td>
+                        <td>: ${product.stock}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Availibility</b></td>
+                        <td>: ${product.availabilityStatus}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Return Policy</b></td>
+                        <td>: ${product.returnPolicy}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Minimum Order Quantity</b></td>
+                        <td>: ${product.minimumOrderQuantity}</td>
+                    </tr>
+                </table>
+                </div>`
     str=``
     product.reviews.map((i)=>{
         str+=`<div class="review">
@@ -30,8 +62,6 @@ async function fetchProduct(){
                 </div>`
     })
     document.getElementById("rev").innerHTML=str;
-    document.getElementById("pc").innerHTML=`<p > <b>Return Policy:</b>${product.returnPolicy}</p>
-    <p><b>Minimum Order Quantity</b>${product.minimumOrderQuantity}</p>`;
     document.getElementById("img2").src=`${product.meta.qrCode}`
     document.getElementById
 } 
@@ -40,7 +70,7 @@ function changeImage(img){
     document.getElementById("img").src=img;
 }
 function addToCart(){
-    // console.log(product)
+    // console.log(product);
     localStorage.setItem(product.id,JSON.stringify(product));
     window.location.href="../html/cart.html";
 }

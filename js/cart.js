@@ -7,13 +7,13 @@ function getCart(){
         const value=JSON.parse(localStorage.getItem(key));
         // console.log(value);
         str+=`<div class="cart">
-            <div class="img">
+            
                 <img src="${value.thumbnail}" alt="">
-            </div>
+            
             <h2>${value.title}</h2>
-            <div class="btn">
+            
                 <button onclick="removeCart('${value.id}')">Remove</button>
-            </div>
+            
         </div>`
     }
     document.getElementById("carts").innerHTML=str;
