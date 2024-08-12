@@ -1,0 +1,23 @@
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+.cart img{
+    width: 7rem;
+    height: 7rem;
+}
+.btn button{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 12px 22px;
+}
+#count{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+}

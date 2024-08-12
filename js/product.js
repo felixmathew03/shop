@@ -1,9 +1,11 @@
+let product;
 async function fetchProduct(){
     const urlParams=new URLSearchParams(window.location.search)
     id=urlParams.get("id");
     console.log(id);
-    const res=await fetch(`https://dummyjson.com/products/${id}`)
-    const product=await res.json();
+    const res=await fetch(`https://dummyjson.com/products/${id}`);
+    product=await res.json();
+    
     document.getElementById("img").src=`${product.thumbnail}`;
     document.getElementById("h2a").innerHTML=`${product.title}`
     document.getElementById("pa").innerHTML=`${product.description}`
@@ -31,3 +33,9 @@ async function fetchProduct(){
     document.getElementById
 } 
 fetchProduct();
+
+function addToCart(){
+    // console.log(product)
+    localStorage.setItem(product.id,JSON.stringify(product));
+    window.location.href="../html/cart.html";
+}

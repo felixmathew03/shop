@@ -23,17 +23,25 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
 }
 .pdleft{
     width: 40%;
     height: 100%;
     text-align: center;
-    position: relative;
+    display: flex;
+    background-color: black;
 }
-.pdleft img{
-    height: 28rem;
-    width: 28rem;
+.pdl1{
+    width: 15%;
+    height: 100%;
+}
+.pdl2{
+    width: 85%;
+    height: 100%;
+}
+.pdleft .pdl2 img{
+    height: 24rem;
+    width: 24rem;
 }
 .pdleft button{
     width: 45%;
@@ -42,10 +50,11 @@
     color: white;
     font-size:medium;
     border-radius: 5px;
+    padding: 16px 24px;
     border: 1px solid rgb(41, 40, 40);
     background-color: rgb(41, 40, 40);
 }
-.pdleft  #bt1 {
+/* .pdleft  #bt1 {
     position: absolute;
     left: 1%;
     bottom: 1%;
@@ -54,7 +63,7 @@
     position: absolute;
     bottom: 1%;
     right: 1%;
-}
+} */
 .pdright{
     width:60%;
     height: 100%;
