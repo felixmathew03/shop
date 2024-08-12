@@ -82,15 +82,12 @@
     scrollbar-width: none;
 }
 .price{
-    font-size: large;
     display: flex;
+    align-items: center;
+    margin-top: 8px;
 }
-.price h3{
-    margin-right: 1%;
-}
-.price h4{
-    color: gray;
-}
+
+
 .avail{
     color: red;
     font-weight: bold;
@@ -116,4 +113,32 @@
 }
 .pdl1 img:hover {
     transform: scale(1.1);
+}
+#pa{
+    font-size: 12px;
+}
+#h2a .title{
+    font-weight: bold;
+    font-size: 24px;
+}
+#h2a .categ{
+    font-weight: lighter;
+}
+#pa{
+    padding: 5px 10px;
+}
+.p1{
+    color: green;
+}
+.p2{
+    color: rgb(172, 32, 32);
+    font-weight: lighter;
+}
+.r img{
+    height: 16px;
+    width: 16px;
+}
+.pa {
+    display: flex;
+    justify-content: center;
 }

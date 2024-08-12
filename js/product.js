@@ -11,11 +11,13 @@ async function fetchProduct(){
         str1+=`<img onmouseover="changeImage('${i}')" src="${i}" alt="" >`;
     })
     document.getElementById("pdl1").innerHTML=str1;
-    document.getElementById("h2a").innerHTML=`${product.title}`
-    document.getElementById("pa").innerHTML=`${product.description}`
-    document.getElementById("h3a").innerHTML=`Category: ${product.category}`
-    document.getElementById("price").innerHTML=`<h3 >$${product.price}</h3> <h4 ><strike>${product.discountPercentage}</strike>%off</h4>`
-    document.getElementById("pb").innerHTML=`<span class="r">Rating: ${product.rating}</span><br><br>Stock: ${product.stock}<br><br> Availibility: <span class="avail">${product.availabilityStatus}</span>`
+    document.getElementById("h2a").innerHTML=`<span class="title">${product.title}</span><span class="categ">(${product.category})</span>`
+    document.getElementById("pa").innerHTML=`<span class="r">${product.rating}<img src="../img/star_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""></span>${product.description}`
+    cost=product.price-(product.price*product.discountPercentage/100);
+    c=cost.toString();
+    
+    document.getElementById("price").innerHTML=`<h2 class="p1">$${c.substring(0,5)}</h2> <h3 class="p2"><strike>$${product.price}</strike></h3>`
+    document.getElementById("pb").innerHTML=`Stock: ${product.stock}<br><br> Availibility: <span class="avail">${product.availabilityStatus}</span>`
     document.getElementById("det").innerHTML=`
                                         <p><b>Brand: </b>${product.brand}</p>
                                         <p><b>sku: </b>${product.sku}</p>
