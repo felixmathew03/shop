@@ -1,12 +1,16 @@
+
 let product;
 async function fetchProduct(){
     const urlParams=new URLSearchParams(window.location.search)
     id=urlParams.get("id");
-    console.log(id);
     const res=await fetch(`https://dummyjson.com/products/${id}`);
     product=await res.json();
-    
-    document.getElementById("img").src=`${product.thumbnail}`;
+    document.getElementById("img").src=product.thumbnail;
+    str1=``;
+    product.images.map((i)=>{
+        str1+=`<img onmouseover="changeImage('${i}')" src="${i}" alt="" >`;
+    })
+    document.getElementById("pdl1").innerHTML=str1;
     document.getElementById("h2a").innerHTML=`${product.title}`
     document.getElementById("pa").innerHTML=`${product.description}`
     document.getElementById("h3a").innerHTML=`Category: ${product.category}`
@@ -20,10 +24,7 @@ async function fetchProduct(){
     str=``
     product.reviews.map((i)=>{
         str+=`<div class="review">
-                    <p><b>Name:</b>${i.reviewerName}</p>
-                    <p><b>Email:</b>${i.reviewerEmail}</p>
-                    <p> <b>Date:</b>${i.date.substring(0,10)}</p>
-                    <p><b>Comment:</b>${i.comment}</p>
+                    <p><b>${i.reviewerName}</b>:${i.comment}</p>
                 </div>`
     })
     document.getElementById("rev").innerHTML=str;
@@ -33,7 +34,9 @@ async function fetchProduct(){
     document.getElementById
 } 
 fetchProduct();
-
+function changeImage(img){
+    document.getElementById("img").src=img;
+}
 function addToCart(){
     // console.log(product)
     localStorage.setItem(product.id,JSON.stringify(product));
