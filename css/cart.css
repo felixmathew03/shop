@@ -4,7 +4,7 @@
     height: 88vh;
 }
 #carts{
-    width: 50%;
+    width: 60%;
     height: 100%;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -16,7 +16,9 @@
     width: 60%;
     margin: 20px;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     border-radius: 15px;
     background-color: rgb(245, 243, 243);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -38,38 +40,42 @@
     color: black;
     border-radius: 50%;
 }
-.details{
-    width: 50%;
+.detail{
+    width: 40%;
     height: 100%;
+}
+.details{
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items:center ;
 }
-.lpd{
-    width: auto;
-    padding: 10%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.19);
+
+ .qnty{
+    background-color: black;
+    border-radius: 50%;
+ }
+ .qnty img{
+    height: 0.8rem;
+    width: 1rem;
+ }
+ .txt{
+    border: 1px solid;
+    margin: 0 5px;
+    padding: 0 5px;
+ }
+ .details table{ 
+    width: 90%;
+    border-collapse: collapse;
+ }
+ .details table th,.details table td{ 
+    padding: 15px;
+ }
+.cp{
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
 }
-.lbut{
-    background-color: rgb(74, 188, 82);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 30px;
+.cont{
+    line-height: 1.5rem;
 }
-.col{
-    text-align: center;
-}
-.coll{
-    text-align: center;
-    padding: 15px 0 0 0;
-}
-.pad td{
-    padding: 10px;
-}
-td input[type="text"]{
-    width: 200px;
-    height: 30px;
-}
- 
