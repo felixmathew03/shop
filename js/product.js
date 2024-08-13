@@ -16,7 +16,9 @@ async function fetchProduct(){
     cost=product.price-(product.price*product.discountPercentage/100);
     c=cost.toString();
     
-    document.getElementById("price").innerHTML=`<h2 class="p1">$${c.substring(0,5)}</h2> <h3 class="p2"><strike>$${product.price}</strike></h3>  <h5> ${product.discountPercentage}%off</h5>`
+    document.getElementById("price").innerHTML=`<h2 class="p1">$${c.substring(0,5)}</h2> 
+            <h3 class="p2"><strike>$${product.price}</strike></h3>  
+            <h5> ${product.discountPercentage}%off</h5>`
     document.getElementById("det").innerHTML=`
                 <h2 class="spec">Specification</h2>
                 <div class="table">
