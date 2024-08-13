@@ -58,12 +58,13 @@ async function fetchProduct(){
     str=``
     product.reviews.map((i)=>{
         str+=`<div class="review">
-                    <p><b>${i.reviewerName}</b>:${i.comment}</p>
+                    <h4><span class="r">${i.rating}<img src="../img/star_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""></span>${i.comment}</h4>
+                    <p><b>${i.reviewerName}</b> ${i.date.substring(0,10)}</p>
+                    <p>${i.reviewerEmail}</p>
                 </div>`
     })
     document.getElementById("rev").innerHTML=str;
-    document.getElementById("img2").src=`${product.meta.qrCode}`
-    document.getElementById
+    
 } 
 fetchProduct();
 function changeImage(img){

@@ -104,11 +104,11 @@
     padding: 10px;
     margin-bottom: 10px;
 }
-.rev{
+/* .rev{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-}
+} */
 .pdl1 img{
     width: 100%;
 
@@ -147,7 +147,8 @@
     justify-content: center;
 }
 .review{
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 25px;
 }
 .bank{
     margin: 15px 0;
@@ -175,4 +176,7 @@
 }
 #h3re{
     margin: 15px;
+}
+.review h4{
+    font-weight: lighter;
 }

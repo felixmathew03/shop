@@ -71,7 +71,9 @@ nav .title h1 {
     color: #fff; /* White color for the title */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for better readability */
 }
-
+nav a:active, nav a:visited{
+    color: #fff;
+}
 #search {
     margin-top: 10px;
 }
