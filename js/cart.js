@@ -2,6 +2,12 @@
 let qu=[]
 let total=0;
 function getCart(){
+    if(localStorage.length==0){
+        document.body.innerHTML="<h2>Cart empty..</h2><a href='../index.html'>Go to products</a>";
+    }
+    else{
+
+    
     // console.log(localStorage.length);
     str=``;
     str1=``;
@@ -53,7 +59,8 @@ function getCart(){
         total+=c;
         document.getElementById(`pr${i}`).innerHTML=`$${c.toString().substring(0,7)}`;
     }
-    document.getElementById("tm").innerHTML=`Total Amount: $${total.toString().substring(0,7)}`
+    document.getElementById("tm").innerHTML=`Total Amount: $${total.toString().substring(0,7)}`;
+}
 }
 getCart();
 function removeCart(id){
@@ -94,5 +101,5 @@ function plus(i){
 
 function clearA(){
     localStorage.clear();
-    document.body.innerHTML="<h2>OOPS!!! you haven't brought anything yet?? </h2><a href='../index.html'>Go to products</a>";
+    document.body.innerHTML="<h2>Cart empty..</h2><a href='../index.html'>Go to products</a>";
 }
