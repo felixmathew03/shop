@@ -1,7 +1,7 @@
 
 .log{
-    width: 250px;
-    height: 100%;
+    width: 150px;
+    height: 50px;
     display: flex;
     justify-content: end;
     padding-right: 5%;
@@ -12,9 +12,8 @@
     height: 60%;
     margin: 2%;
     color: white;
-    font-size:medium;
     border-radius: 5px;
-    border: 1px solid rgb(41, 40, 40);
+    border: 1px solid rgb(20, 16, 16);
     background-color: green;
 }
 
@@ -23,14 +22,14 @@
     height: 80vh;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .pdleft{
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 40%;
+    width: 38%;
     height: 100%;
     text-align: center;
     display: flex;
@@ -90,8 +89,8 @@
 
 
 .r{
-    background-color: rgb(13, 142, 13);
     padding: 4px;
+    background-color: rgb(13, 142, 13);
     border-radius: 5px;
     color: white;
     margin-right: 1%;
